@@ -6,7 +6,7 @@ export default function DetailScreen({ route, navigation }) {
   // Verify: `item.id`, `item.name`, and `item.description` below render with
   // real values instead of the placeholders.
 
-  const { item } = route.params;
+  const { id, name, description } = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -16,21 +16,21 @@ export default function DetailScreen({ route, navigation }) {
             read from the item you destructured above. Keep the existing styles. */}
         <View style={styles.infoCard}>
           <Text style={styles.label}>Item ID:</Text>
-          <Text style={styles.value}>—</Text>
+          <Text style={styles.value}>{id}</Text>
 
           <Text style={styles.label}>Name:</Text>
-          <Text style={styles.value}>—</Text>
+          <Text style={styles.value}>{name}</Text>
 
           <Text style={styles.label}>Description:</Text>
-          <Text style={styles.description}>—</Text>
+          <Text style={styles.description}>{description}</Text>
         </View>
 
-        <Pressable
+        {/* <Pressable
           style={styles.button}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.buttonText}>← Go Back</Text>
-        </Pressable>
+        </Pressable> */}
       </View>
     </View>
   );

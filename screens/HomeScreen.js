@@ -28,6 +28,13 @@ export default function HomeScreen({ navigation }) {
     navigation.navigate('Detail', item);
   };
 
+  // TODO #3: Replace the placeholder below with a NavigationCard that opens
+  // the Settings tab.
+  // Verify: Tapping the card opens Settings.
+  const goToSettings = () => {
+    navigation.navigate('Settings');
+  };
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>

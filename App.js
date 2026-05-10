@@ -7,6 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
+import SettingsScreen from './screens/SettingsScreen';
 // TODO #3B: Import SettingsScreen so it can be wired into the bottom tabs.
 // Verify: Once imported, the Settings tab can render without "Component is not defined".
 
@@ -39,6 +40,24 @@ function HomeStack() {
   );
 }
 
+function SettingsStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: '#007AFF' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
+      <Stack.Screen
+        name="SettingsHome"
+        component={SettingsScreen}
+        options={{ title: 'Settings' }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 function MainTabs() {
   return (
     <Tab.Navigator
@@ -52,7 +71,9 @@ function MainTabs() {
           // TODO #3C: Add an icon mapping for the Settings tab so it shows the
           // gear icon (filled when active, outline otherwise).
           // Verify: The Settings tab in the bottom bar shows a settings icon.
-
+          else if (route.name === 'SettingsTab') {
+            iconName = focused ? 'settings' : 'settings-outline';
+          }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#007AFF',
@@ -67,8 +88,11 @@ function MainTabs() {
         component={HomeStack}
         options={{ tabBarLabel: 'Home', title: 'Home' }}
       />
-      {/* TODO #3D: Add the Settings tab below this one.
-          Verify: The bottom bar shows two tabs and tapping Settings renders SettingsScreen. */}
+      <Tab.Screen
+        name="SettingsTab"
+        component={SettingsStack}
+        options={{ tabBarLabel: 'Settings', title: 'Settings' }}
+      />
     </Tab.Navigator>
   );
 }

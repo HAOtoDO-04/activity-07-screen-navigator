@@ -6,6 +6,7 @@ export default function DetailScreen({ route, navigation }) {
   // Verify: `item.id`, `item.name`, and `item.description` below render with
   // real values instead of the placeholders.
 
+  const { item } = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.content}>

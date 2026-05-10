@@ -29,6 +29,12 @@ function HomeStack() {
       />
       {/* TODO #1: Register the Detail screen on this stack so HomeScreen can navigate to it.
           Verify: Tapping a card on Home pushes a screen titled "Details". */}
+      <Stack.Screen
+        name="Detail"
+        component={DetailScreen} />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen} />
     </Stack.Navigator>
   );
 }

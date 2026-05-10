@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
   // Verify: Tapping a card opens the Detail screen and the tapped item's data
   // shows up there (DetailScreen will read it from `route.params`).
   const goToDetail = (item) => {
-    // Your code here
+    navigation.navigate('Detail', item);
   };
 
   return (

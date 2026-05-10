@@ -19,10 +19,32 @@ import { View, Text, StyleSheet, Switch, ScrollView } from 'react-native';
  * updated state is reflected in the UI immediately.
  */
 export default function SettingsScreen() {
-  // Your code here
+  const [isNotificationEnabled, setIsNotificationEnabled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <View style={styles.container}>
-      <Text style={styles.placeholder}>Build SettingsScreen here.</Text>
+      <Text style={styles.title}>Settings</Text>
+
+      <View style={styles.row}>
+        <Text style={styles.label}>Enable Notifications</Text>
+        <Switch
+          value={isNotificationEnabled}
+          onValueChange={setIsNotificationEnabled}
+        />
+      </View>
+
+      <View style={styles.row}>
+        <Text style={styles.label}>Dark Mode</Text>
+        <Switch
+          value={isDarkMode}
+          onValueChange={setIsDarkMode}
+        />
+      </View>
+
+      <View style={styles.infoCard}>
+        <Text style={styles.appVersion}>App Version: 1.0.0</Text>
+        <Text style={styles.credit}>Credit: Your Name Here</Text>
+      </View>
     </View>
   );
 }

@@ -1,4 +1,4 @@
-# Activity 06 — Screen Navigator
+# Activity 07 — Screen Navigator
 
 > **🛠️ Stack for this lesson** — Expo SDK 54 / React Native 0.79 · runs in Expo Go on a real phone.
 > 📥 Template: [/learn/m1/template/activity-05-screen-navigator](/learn/m1/template/activity-05-screen-navigator)
